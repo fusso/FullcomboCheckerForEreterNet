@@ -1,0 +1,12 @@
+{
+    "name": "FullComboChecker for ereter.net",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "Chrome Extension for ereter.net",
+    "content_scripts": [{
+      "matches": ["http://ereter.net/iidxsongs/stat/level/10/"],
+      "js": [
+        "content.js"
+      ]
+    }]
+}
