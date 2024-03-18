@@ -1,3 +1,4 @@
+// Songs/Stat/Levelのテーブルにカラムを追加する
 function addColumnToTable() {
     var table = document.querySelectorAll('table')[0]; // テーブルを取得
 
@@ -34,10 +35,10 @@ function addColumnToTable() {
 
 // PlayerDataページからテーブルを取得する
 function fetchPlayerDataTable(id, level) {
-    // 他のページのURL
+    // PlayerDataページのURL
     var url = `http://ereter.net/iidxplayerdata/${id}/level/${level}`;
 
-    // fetch() を使用してページにアクセスし、HTMLを取得
+    // fetch()を使用してページにアクセスし、HTMLを取得
     return fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -46,7 +47,7 @@ function fetchPlayerDataTable(id, level) {
             return response.text(); // レスポンスをテキスト形式で取得
         })
         .then(html => {
-            // 取得したHTMLを使って何かを行う
+            // 取得したHTMLからテーブルを取得
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html'); // HTMLをDOMに解析
             var table = doc.querySelector('table'); // ページからテーブルを取得
